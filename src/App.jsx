@@ -1,7 +1,12 @@
-import classes from "./scss/App.scss";
+import classes from "./scss/App.module.scss";
+import NavBar from "./components/nav-bar";
 
 function App() {
-  return <div></div>;
+  return (
+    <div className={classes.wrapper}>
+      <NavBar />
+    </div>
+  );
 }
 
 export default App;

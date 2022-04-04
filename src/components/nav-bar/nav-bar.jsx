@@ -1,4 +1,4 @@
-import classes from "../../scss/components/nav-bar.scss";
+import classes from "../../scss/components/nav-bar.module.scss";
 
 function NavBar() {
   return (
