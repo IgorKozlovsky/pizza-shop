@@ -1,0 +1,102 @@
+.navbar_wrapper {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 300px;
+}
+
+.navbar_bar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "logo navigation cart";
+  -ms-grid-columns: 1fr 20px 2fr 20px 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 0 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1320px;
+}
+.navbar_bar div:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  height: 70px;
+  grid-area: logo;
+}
+.navbar_bar div:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  height: 70px;
+  grid-area: navigation;
+}
+.navbar_bar div:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  height: 70px;
+  grid-area: cart;
+}
+.navbar_bar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+.navbar_bar .logo a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+  width: 100%;
+}
+.navbar_bar .logo a img {
+  height: 100%;
+}
+.navbar_bar .logo a span {
+  color: white;
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.navbar_bar .nav {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  width: 100%;
+}
+/*# sourceMappingURL=_nav-bar.module.css.map */

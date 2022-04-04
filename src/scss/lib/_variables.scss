@@ -3,3 +3,11 @@ $black: #353535;
 $white: white;
 $grey: #828282;
 $background: #ffffff;
+
+@mixin font($size, $color: white) {
+  font: {
+    size: ($size + px);
+    weight: 700;
+  }
+  color: $color;
+}

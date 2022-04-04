@@ -1,4 +1,110 @@
-@use "../lib/colors";
-// .navbar_wrapper {
-//   background-color: colors.$cloosdf;
-// }
+@import "../lib/variables";
+
+$gridname: (
+  1: logo,
+  2: navigation,
+  3: cart,
+);
+$count: 1;
+
+.navbar_wrapper {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  padding: 0px 250px;
+  box-shadow: 0px -22px 50px black;
+}
+.navbar_bar {
+  display: grid;
+  grid-template-areas: "logo navigation cart";
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 0 64px;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  @each $i, $name in $gridname {
+    .#{$i} {
+      height: 70px;
+      grid-area: $name;
+    }
+  }
+  .logo {
+    @include font(34);
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      img {
+        height: 100%;
+      }
+      span {
+        color: white;
+        display: block;
+        align-items: center;
+      }
+    }
+  }
+  .nav {
+    @include font(30);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    button {
+      margin-left: 10%;
+    }
+    button:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .bucket {
+    background: #ffffff;
+    border-radius: 48px;
+    display: grid;
+    grid-template-areas: "img text";
+    grid-template-columns: 1fr 2fr;
+    height: 60%;
+    width: 100%;
+    align-items: center;
+    div {
+      @include font(30, $red);
+      height: 100%;
+    }
+    div:first-child {
+      margin-left: 5px;
+      grid-area: img;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      span:first-child {
+        @include font(24, $red);
+        margin-left: 10px;
+        font-style: normal;
+        line-height: 0px;
+      }
+      img {
+        margin-bottom: -10px;
+        height: 60px;
+      }
+    }
+    div:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-area: text;
+      span:last-child {
+        @include font(24, $red);
+        font-style: normal;
+        line-height: 30px;
+      }
+    }
+  }
+}
