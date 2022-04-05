@@ -1,33 +1,35 @@
 import classes from "../scss/components/_nav-bar.module.scss";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <header className={classes.navbar_wrapper}>
       <div className={classes.navbar_bar}>
-        <figure className={classes.logo}>
-          <a href="#">
+        <Link to="/">
+          <figure className={classes.logo}>
             <img src={require("../assets/img/icon.png")} />
             <figcaption>Курсова піца</figcaption>
-          </a>
-        </figure>
+          </figure>
+        </Link>
 
         <nav className={classes.nav}>
-          <button>Піца</button>
-          <button>Напої</button>
-          <button>Десерти</button>
-          <button>Конструктор</button>
+          <Link to="/">Pizza</Link>
+          <Link to="/drinks">Напої</Link>
+          <Link to="/desserts">Десерти</Link>
+          <Link to="/constuctor">Конструктор</Link>
         </nav>
-
-        <button className={classes.bucket}>
-          <figure>
-            <figcaption>0</figcaption>
-            <img src={require("../assets/img/basket.png")} />
-          </figure>
-          <article>
-            <h2>Замовити</h2>
-            <p>00.00</p>
-          </article>
-        </button>
+        <Link to="/bucket">
+          <button className={classes.bucket}>
+            <figure>
+              <figcaption>0</figcaption>
+              <img src={require("../assets/img/basket.png")} />
+            </figure>
+            <article>
+              <h2>Замовити</h2>
+              <p>00.00</p>
+            </article>
+          </button>
+        </Link>
       </div>
     </header>
   );

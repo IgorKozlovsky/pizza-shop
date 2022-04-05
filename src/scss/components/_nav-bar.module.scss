@@ -32,20 +32,18 @@ $count: 1;
   }
   .logo {
     @include font(34);
-    a {
-      display: flex;
-      flex-direction: row;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    img {
+      height: 100%;
+    }
+    figcaption {
+      color: white;
+      display: block;
       align-items: center;
-      height: 70px;
-      width: 100%;
-      img {
-        height: 100%;
-      }
-      figcaption {
-        color: white;
-        display: block;
-        align-items: center;
-      }
     }
   }
   .nav {
@@ -55,10 +53,10 @@ $count: 1;
     align-items: center;
     height: 50px;
     width: 100%;
-    button {
+    a {
       margin-left: 10%;
     }
-    button:first-child {
+    a:first-child {
       margin-left: 0;
     }
   }
@@ -72,10 +70,7 @@ $count: 1;
     height: 60%;
     width: 100%;
     align-items: center;
-    div {
-      @include font(30, $red);
-      height: 100%;
-    }
+
     figure {
       margin-left: 5px;
       grid-area: img;
@@ -91,7 +86,7 @@ $count: 1;
       }
       img {
         margin-bottom: -10px;
-        height: 60px;
+        height: 55px;
       }
     }
     article {

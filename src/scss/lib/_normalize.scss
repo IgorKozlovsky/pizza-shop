@@ -113,3 +113,8 @@ a {
   user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
 }
+a {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+}
