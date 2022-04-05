@@ -41,7 +41,7 @@ $count: 1;
       img {
         height: 100%;
       }
-      span {
+      figcaption {
         color: white;
         display: block;
         align-items: center;
@@ -76,14 +76,14 @@ $count: 1;
       @include font(30, $red);
       height: 100%;
     }
-    div:first-child {
+    figure {
       margin-left: 5px;
       grid-area: img;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      span:first-child {
+      figcaption {
         @include font(24, $red);
         margin-left: 10px;
         font-style: normal;
@@ -94,13 +94,16 @@ $count: 1;
         height: 60px;
       }
     }
-    div:last-child {
+    article {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       grid-area: text;
-      span:last-child {
+      h2 {
+        @include font(30, $red);
+      }
+      p {
         @include font(24, $red);
         font-style: normal;
         line-height: 30px;

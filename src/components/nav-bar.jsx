@@ -3,32 +3,32 @@ import classes from "../scss/components/_nav-bar.module.scss";
 function NavBar() {
   return (
     <header className={classes.navbar_wrapper}>
-      <nav className={classes.navbar_bar}>
-        <div className={classes.logo}>
+      <div className={classes.navbar_bar}>
+        <figure className={classes.logo}>
           <a href="#">
             <img src={require("../assets/img/icon.png")} />
-            <span>Курсова піца</span>
+            <figcaption>Курсова піца</figcaption>
           </a>
-        </div>
+        </figure>
 
-        <div className={classes.nav}>
+        <nav className={classes.nav}>
           <button>Піца</button>
           <button>Напої</button>
           <button>Десерти</button>
           <button>Конструктор</button>
-        </div>
+        </nav>
 
         <button className={classes.bucket}>
-          <div>
-            <span>0</span>
+          <figure>
+            <figcaption>0</figcaption>
             <img src={require("../assets/img/basket.png")} />
-          </div>
-          <div>
-            <span>Замовити</span>
-            <span>00.00</span>
-          </div>
+          </figure>
+          <article>
+            <h2>Замовити</h2>
+            <p>00.00</p>
+          </article>
         </button>
-      </nav>
+      </div>
     </header>
   );
 }
