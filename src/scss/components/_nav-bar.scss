@@ -7,6 +7,12 @@ $gridname: (
 );
 $count: 1;
 
+@mixin clickAnim {
+  &:active {
+    transform: scale(0.8);
+  }
+}
+
 .navbar_wrapper {
   width: 100%;
   height: 120px;
@@ -36,6 +42,8 @@ $count: 1;
     flex-direction: row;
     align-items: center;
     height: 85px;
+    transition: transform 0.55s ease-out;
+    @include clickAnim;
     img {
       height: 100%;
     }
@@ -57,11 +65,11 @@ $count: 1;
     font-weight: 600;
     a {
       margin-left: 10%;
-      transition: 1s;
       display: inline-block;
       position: relative;
       color: #f4f4f4;
       transition: color 0.25s ease-out;
+      transition: transform 0.11s ease-out;
       &:hover {
         color: #ffffff;
       }
@@ -81,6 +89,7 @@ $count: 1;
         transform: scaleX(1);
         transform-origin: bottom left;
       }
+      @include clickAnim;
     }
     a:first-child {
       margin-left: 0;
@@ -99,6 +108,8 @@ $count: 1;
     width: 100%;
     align-items: center;
     transition: filter 0.25s ease-out;
+    transition: transform 0.55s ease-out;
+    @include clickAnim;
     &:hover {
       filter: brightness(1.1);
     }
