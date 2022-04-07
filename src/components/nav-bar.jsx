@@ -8,10 +8,9 @@ function NavBar() {
         <Link to="/">
           <figure className={classes.logo}>
             <img src={require("../assets/img/icon.png")} />
-            <figcaption>Курсова піца</figcaption>
+            <figcaption>CoursePizza</figcaption>
           </figure>
         </Link>
-
         <nav className={classes.nav}>
           <Link to="/">Pizza</Link>
           <Link to="/drinks">Напої</Link>

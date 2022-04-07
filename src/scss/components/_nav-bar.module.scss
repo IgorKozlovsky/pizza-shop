@@ -1,5 +1,5 @@
 @import "../lib/variables";
-
+@import "../lib/fonts";
 $gridname: (
   1: logo,
   2: navigation,
@@ -18,7 +18,7 @@ $count: 1;
 .navbar_bar {
   display: grid;
   grid-template-areas: "logo navigation cart";
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 0.5fr 2fr 1fr;
   grid-gap: 0 64px;
   align-items: center;
   height: 100%;
@@ -31,16 +31,17 @@ $count: 1;
     }
   }
   .logo {
-    @include font(34);
+    @include font(45);
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 70px;
-    width: 100%;
+    height: 85px;
     img {
       height: 100%;
     }
     figcaption {
+      text-shadow: 0px 0px 3px black;
+      font-family: Breakfast;
       color: white;
       display: block;
       align-items: center;

@@ -1,12 +1,14 @@
 import classes from "./scss/App.module.scss";
-import { NavBar } from "./components";
+import { NavBar, Footer } from "./components";
 import { Pizza, Drinks, Desserts, Constructor } from "./pages";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className={classes.wrapper}>
-      <NavBar />
+      <nav>
+        <NavBar />
+      </nav>
       <main>
         <Routes>
           <Route path="/" element={<Pizza />} />
@@ -15,6 +17,9 @@ function App() {
           <Route path="/constructor" element={<Constructor />} />
         </Routes>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
