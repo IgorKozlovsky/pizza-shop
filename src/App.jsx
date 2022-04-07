@@ -1,11 +1,11 @@
-import classes from "./scss/App.module.scss";
+import "./scss/App.scss";
 import { NavBar, Footer } from "./components";
 import { Pizza, Drinks, Desserts, Constructor } from "./pages";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className={classes.wrapper}>
+    <div className="wrapper">
       <nav>
         <NavBar />
       </nav>

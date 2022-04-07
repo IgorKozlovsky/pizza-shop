@@ -1,24 +1,25 @@
-import classes from "../scss/components/_nav-bar.module.scss";
 import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
-    <header className={classes.navbar_wrapper}>
-      <div className={classes.navbar_bar}>
+    <header className="navbar_wrapper">
+      <div className="navbar_bar">
         <Link to="/">
-          <figure className={classes.logo}>
+          <figure className="logo">
             <img src={require("../assets/img/icon.png")} />
             <figcaption>CoursePizza</figcaption>
           </figure>
         </Link>
-        <nav className={classes.nav}>
-          <Link to="/">Pizza</Link>
+        <nav className="nav">
+          <Link className="nav_active" to="/">
+            Pizza
+          </Link>
           <Link to="/drinks">Напої</Link>
           <Link to="/desserts">Десерти</Link>
           <Link to="/constuctor">Конструктор</Link>
         </nav>
         <Link to="/bucket">
-          <button className={classes.bucket}>
+          <button className="bucket">
             <figure>
               <figcaption>0</figcaption>
               <img src={require("../assets/img/basket.png")} />

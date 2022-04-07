@@ -54,16 +54,43 @@ $count: 1;
     align-items: center;
     height: 50px;
     width: 100%;
+    font-weight: 600;
     a {
       margin-left: 10%;
+      transition: 1s;
+      display: inline-block;
+      position: relative;
+      color: #f4f4f4;
+      transition: color 0.25s ease-out;
+      &:hover {
+        color: #ffffff;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -10px;
+        left: 0;
+        background-color: #ffffff;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+      &:hover:after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
     }
     a:first-child {
       margin-left: 0;
     }
   }
-
+  .link-lox {
+    color: #000;
+  }
   .bucket {
-    background: #ffffff;
+    background: #f6f6f6;
     border-radius: 48px;
     display: grid;
     grid-template-areas: "img text";
@@ -71,7 +98,10 @@ $count: 1;
     height: 60%;
     width: 100%;
     align-items: center;
-
+    transition: filter 0.25s ease-out;
+    &:hover {
+      filter: brightness(1.1);
+    }
     figure {
       margin-left: 5px;
       grid-area: img;

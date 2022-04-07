@@ -3,9 +3,8 @@ const initialState = {
   a: "hello UA",
 };
 
-export default function rootReducer(state = initialState, action: any) {
+export default function rootReducer(state = initialState, action) {
   switch (action.type) {
-
   }
   return state;
 }
