@@ -1,5 +1,5 @@
 function Drinks() {
-  return <div>ыфвфы</div>;
+  return <div></div>;
 }
 
 export default Drinks;

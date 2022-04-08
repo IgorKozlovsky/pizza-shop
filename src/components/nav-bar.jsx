@@ -12,7 +12,7 @@ function NavBar() {
         </Link>
         <nav className="nav">
           <Link className="nav_active" to="/">
-            Pizza
+            Піца
           </Link>
           <Link to="/drinks">Напої</Link>
           <Link to="/desserts">Десерти</Link>

@@ -1,5 +1,5 @@
 function Pizza() {
-  return <div>зшшваы</div>;
+  return <div></div>;
 }
 
 export default Pizza;

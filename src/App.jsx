@@ -1,7 +1,13 @@
 import "./scss/App.scss";
-import { NavBar, Footer } from "./components";
+import { NavBar, Footer, Sort } from "./components";
 import { Pizza, Drinks, Desserts, Constructor } from "./pages";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
+
+const sortIems = [
+  { name: "ціною", type: "price" },
+  { name: "алфавітом", type: "name" },
+];
+const topLabelItem = ["Меню піци: ", "Меню напоїв: ", "Меню десертів: "];
 
 function App() {
   return (
@@ -10,6 +16,9 @@ function App() {
         <NavBar />
       </nav>
       <main>
+        <div className="main_top">
+          <Sort items={sortIems} labelItems={topLabelItem} />
+        </div>
         <Routes>
           <Route path="/" element={<Pizza />} />
           <Route path="/drinks" element={<Drinks />} />
