@@ -1,0 +1,136 @@
+{
+  "pizzas": [
+    {
+      "id": 0,
+      "imageUrl": "../src/assets/img/baconmushrooms.jpeg",
+      "name": "Бекон та гриби",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 140
+    },
+    {
+      "id": 1,
+      "imageUrl": "../src/assets/img/cheesychiken.jpeg",
+      "name": "Сирна піца",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 110
+    },
+    {
+      "id": 2,
+      "imageUrl": "../src/assets/img/diablo.jpeg",
+      "name": "Діабло",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 128
+    },
+    {
+      "id": 3,
+      "imageUrl": "../src/assets/img/doublechiken.jpeg",
+      "name": "Подвійне курча",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 120
+    },
+    {
+      "id": 4,
+      "imageUrl": "../src/assets/img/havai.jpeg",
+      "name": "Гавайська",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 172
+    },
+    {
+      "id": 5,
+      "imageUrl": "../src/assets/img/mix.jpeg",
+      "name": "Мікс",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 233
+    },
+    {
+      "id": 6,
+      "imageUrl": "../src/assets/img/orange.jpeg",
+      "name": "Курча в мандарині",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 240
+    },
+    {
+      "id": 7,
+      "imageUrl": "../src/assets/img/peperoni.jpeg",
+      "name": "Пепероні",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 181
+    },
+    {
+      "id": 8,
+      "imageUrl": "../src/assets/img/peperonifresh.jpeg",
+      "name": "Пепероні фреш",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 130
+    },
+    {
+      "id": 9,
+      "imageUrl": "../src/assets/img/vegetables.jpeg",
+      "name": "Овочі та гриби 🌱",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 180
+    }
+  ],
+  "drinks": [
+    {
+      "id": 0,
+      "imageUrl": "../src/assets/img/pepsi.jpeg",
+      "name": "Pepsi-cola",
+      "type": "0,5л",
+      "price": 29
+    },
+    {
+      "id": 1,
+      "imageUrl": "../src/assets/img/mirinda.jpeg",
+      "name": "Mirinda",
+      "type": "0,5л",
+      "price": 29
+    },
+    {
+      "id": 2,
+      "imageUrl": "../src/assets/img/7up.jpeg",
+      "name": "7UP",
+      "type": "0,5л",
+      "price": 29
+    },
+    {
+      "id": 3,
+      "imageUrl": "../src/assets/img/lipton.jpeg",
+      "name": "Lipton",
+      "type": "0,5л",
+      "price": 29
+    },
+    {
+      "id": 4,
+      "imageUrl": "../src/assets/img/sandor-granat.jpeg",
+      "name": "Sandora Гранатовий",
+      "type": "1л",
+      "price": 45
+    },
+    {
+      "id": 5,
+      "imageUrl": "../src/assets/img/mingaz.jpeg",
+      "name": "Aqua Minerale сильногазована",
+      "type": "0,5л",
+      "price": 29
+    },
+    {
+      "id": 6,
+      "imageUrl": "../src/assets/img/negaz.jpeg",
+      "name": "Aqua Minerale негазована",
+      "type": "0,5л",
+      "price": 29
+    }
+  ],
+  "desserts": []
+}

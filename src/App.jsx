@@ -1,7 +1,9 @@
 import "./scss/App.scss";
 import { NavBar, Footer, Sort } from "./components";
 import { Pizza, Drinks, Desserts, Constructor } from "./pages";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setSortBy } from "./redux/action/filters";
 
 const sortIems = [
   { name: "ціною", type: "price" },
@@ -10,6 +12,8 @@ const sortIems = [
 const topLabelItem = ["Меню піци: ", "Меню напоїв: ", "Меню десертів: "];
 
 function App() {
+  const dispatch = useDispatch();
+
   return (
     <div className="wrapper">
       <nav>
