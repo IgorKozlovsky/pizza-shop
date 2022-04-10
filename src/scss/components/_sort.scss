@@ -10,12 +10,13 @@
   height: 100px;
   h2 {
     font: {
+      size: 34px;
       weight: bold;
     }
   }
   div {
     cursor: pointer;
-    @include font(28, $grey);
+    @include font(26, $grey);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -26,10 +27,11 @@
     img {
       width: 0;
       height: 0;
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-bottom: 20px solid $grey;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 16px solid $grey;
       margin-right: 5px;
+      margin-top: 5px;
     }
     .rotate {
       transform: rotate(180deg);

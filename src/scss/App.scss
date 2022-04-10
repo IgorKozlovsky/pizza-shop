@@ -14,4 +14,13 @@ body {
   width: 100%;
   z-index: 20;
   justify-content: center;
+  .nav {
+    position: sticky;
+    top: 0px;
+  }
+}
+.main_wrapper {
+  width: 100%;
+
+  padding: 0px 250px;
 }
