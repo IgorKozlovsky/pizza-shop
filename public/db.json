@@ -94,49 +94,49 @@
   "drinks": [
     {
       "id": 0,
-      "imageUrl": "pepsi.jpeg",
+      "imageUrl": "pepsi.jpg",
       "name": "Pepsi-cola",
       "type": "0,5л",
       "price": 29
     },
     {
       "id": 1,
-      "imageUrl": "mirinda.jpeg",
+      "imageUrl": "mirinda.jpg",
       "name": "Mirinda",
       "type": "0,5л",
       "price": 29
     },
     {
       "id": 2,
-      "imageUrl": "7up.jpeg",
+      "imageUrl": "7up.jpg",
       "name": "7UP",
       "type": "0,5л",
       "price": 29
     },
     {
       "id": 3,
-      "imageUrl": "lipton.jpeg",
+      "imageUrl": "lipton.jpg",
       "name": "Lipton",
       "type": "0,5л",
       "price": 29
     },
     {
       "id": 4,
-      "imageUrl": "sandor-granat.jpeg",
+      "imageUrl": "sandora-granat.jpg",
       "name": "Sandora Гранатовий",
       "type": "1л",
       "price": 45
     },
     {
       "id": 5,
-      "imageUrl": "mingaz.jpeg",
+      "imageUrl": "mingaz.jpg",
       "name": "Aqua Minerale сильногазована",
       "type": "0,5л",
       "price": 29
     },
     {
       "id": 6,
-      "imageUrl": "negaz.jpeg",
+      "imageUrl": "negaz.jpg",
       "name": "Aqua Minerale негазована",
       "type": "0,5л",
       "price": 29

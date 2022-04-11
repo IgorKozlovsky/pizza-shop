@@ -4,7 +4,7 @@ import { Pizza, Drinks, Desserts, Constructor } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useCallback, useEffect } from "react";
-import { fetchPizzas, setPizza } from "./redux/action/items";
+import { fetchPizzas, fetchDrinks } from "./redux/action/items";
 import { setSortBy, setOrder } from "./redux/action/filters";
 
 const sortIems = [
@@ -26,10 +26,6 @@ function App() {
     dispatch(setOrder(index));
   }, []);
 
-  useEffect(() => {
-    dispatch(fetchPizzas(sortBy, order));
-  }, [sortBy, order]);
-
   return (
     <div className="wrapper">
       <nav className="nav">
@@ -48,8 +44,11 @@ function App() {
         </div>
         <div className="main_wrapper">
           <Routes>
-            <Route path="/" element={<Pizza />} />
-            <Route path="/drinks" element={<Drinks />} />
+            <Route path="/" element={<Pizza sortBy={sortBy} order={order} />} />
+            <Route
+              path="/drinks"
+              element={<Drinks sortBy={sortBy} order={order} />}
+            />
             <Route path="/desserts" element={<Desserts />} />
             <Route path="/constructor" element={<Constructor />} />
           </Routes>
