@@ -1,26 +1,34 @@
 import "./scss/App.scss";
-import axios from "axios";
 import { NavBar, Footer, Sort } from "./components";
 import { Pizza, Drinks, Desserts, Constructor } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect } from "react";
-import { setPizza } from "./redux/action/items";
+import React, { useCallback, useEffect } from "react";
+import { fetchPizzas, setPizza } from "./redux/action/items";
+import { setSortBy, setOrder } from "./redux/action/filters";
 
 const sortIems = [
   { name: "ціною", type: "price" },
   { name: "алфавітом", type: "name" },
 ];
+
 const topLabelItem = ["Меню піци: ", "Меню напоїв: ", "Меню десертів: "];
 
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/pizzas")
-      .then(({ data }) => dispatch(setPizza(data)));
+  const { sortBy, order } = useSelector(({ filters }) => filters);
+
+  const onSetSortBy = useCallback((index) => {
+    dispatch(setSortBy(index));
   }, []);
+  const onSetOrder = useCallback((index) => {
+    dispatch(setOrder(index));
+  }, []);
+
+  useEffect(() => {
+    dispatch(fetchPizzas(sortBy, order));
+  }, [sortBy, order]);
 
   return (
     <div className="wrapper">
@@ -29,7 +37,14 @@ function App() {
       </nav>
       <main>
         <div className="main_top">
-          <Sort items={sortIems} labelItems={topLabelItem} />
+          <Sort
+            items={sortIems}
+            sortBy={sortBy}
+            labelItems={topLabelItem}
+            onClickSetSort={onSetSortBy}
+            order={order}
+            onClickOrder={onSetOrder}
+          />
         </div>
         <div className="main_wrapper">
           <Routes>

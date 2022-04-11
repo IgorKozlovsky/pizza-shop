@@ -1,22 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+
 import { useLocation } from "react-router-dom";
 
-function Sort({ items }) {
+function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const [activeItem, setActiveItem] = useState(0);
-  const [activeTriangle, setActiveTriangle] = useState(false);
+  // const [activeTriangle, setActiveTriangle] = useState(false);
   const sortRef = useRef();
-  const activeLable = items[activeItem].name;
+
+  const activeLable = items.find((obj) => obj.type === sortBy.type).name;
 
   const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
   const toggleActiveTriangle = () => {
-    setActiveTriangle(!activeTriangle);
+    switch (order) {
+      case "asc":
+        onClickOrder("desc");
+        break;
+
+      default:
+        onClickOrder("asc");
+        break;
+    }
   };
-  const onSelectItem = (index) => {
-    setActiveItem(index);
+  const onSelectItem = (obj) => {
+    onClickSetSort(obj.type);
   };
   const closePopup = (e) => {
     let path = e.path;
@@ -51,7 +59,7 @@ function Sort({ items }) {
       <div className="sort_label">
         <img
           onClick={toggleActiveTriangle}
-          className={activeTriangle ? "rotate" : ""}
+          className={order === "asc" ? "" : "rotate"}
         ></img>
         <article>
           <label>Сортування за: </label>
@@ -68,10 +76,8 @@ function Sort({ items }) {
                 {items &&
                   items.map((obj, index) => (
                     <li
-                      className={activeItem === index ? "active" : ""}
-                      onClick={() => {
-                        onSelectItem(index);
-                      }}
+                      onClick={() => onSelectItem(obj)}
+                      className={sortBy.type === obj.type ? "active" : ""}
                       key={`${obj.type}_${index}`}
                     >
                       {obj.name}

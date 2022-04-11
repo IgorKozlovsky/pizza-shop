@@ -1,8 +1,9 @@
 import classNames from "classnames";
 import { useState } from "react";
+import { PizzaLoading } from "./Loadings";
 
 function PizzaItem({ imageUrl, name, text, types, sizes, price }) {
-  const varietyOfTypes = ["звичайний", "тонкий", "без бортів"];
+  const varietyOfTypes = ["Звичайний", "Тонкий", "Без бортів"];
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
 
@@ -31,7 +32,7 @@ function PizzaItem({ imageUrl, name, text, types, sizes, price }) {
                   active: activeSize === index,
                 })}
               >
-                {size}
+                {size} см
               </li>
             );
           })}
