@@ -23,6 +23,15 @@ export const fetchDrinks =
       .then(({ data }) => dispatch(setDrinks(data)));
   };
 
+export const fetchDesserts =
+  ({ type }, order) =>
+  (dispatch) => {
+    dispatch(setLoaded(false));
+    axios
+      .get(`http://localhost:3001/desserts?_sort=${type}&_order=${order}`)
+      .then(({ data }) => dispatch(setDesserts(data)));
+  };
+
 export const setPizza = (type) => ({
   type: "SET_PIZZAS",
   payload: type,
@@ -30,5 +39,9 @@ export const setPizza = (type) => ({
 
 export const setDrinks = (type) => ({
   type: "SET_DRINKS",
+  payload: type,
+});
+export const setDesserts = (type) => ({
+  type: "SET_DESSERTS",
   payload: type,
 });

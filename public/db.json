@@ -142,5 +142,48 @@
       "price": 29
     }
   ],
-  "desserts": []
+  "desserts": [
+    {
+      "id": 0,
+      "imageUrl": "baits.jpg",
+      "name": "Байтси з корицею",
+      "type": "176г",
+      "price": 50
+    },
+    {
+      "id": 1,
+      "imageUrl": "chocomaffin.jpg",
+      "name": "Шоколадний мафін",
+      "type": "90г",
+      "price": 30
+    },
+    {
+      "id": 2,
+      "imageUrl": "chocorolls.jpg",
+      "name": "Шоколадні роли",
+      "type": "240г",
+      "price": 66
+    },
+    {
+      "id": 3,
+      "imageUrl": "creamrolls.jpg",
+      "name": "Крем-сир роли",
+      "type": "250г",
+      "price": 85
+    },
+    {
+      "id": 4,
+      "imageUrl": "lavacake.jpg",
+      "name": "Лава кейк",
+      "type": "96г",
+      "price": 58
+    },
+    {
+      "id": 5,
+      "imageUrl": "vanilmaffin.jpg",
+      "name": "Ванільний мафін",
+      "type": "90г",
+      "price": 30
+    }
+  ]
 }

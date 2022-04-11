@@ -4,7 +4,6 @@ import { Pizza, Drinks, Desserts, Constructor } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useCallback, useEffect } from "react";
-import { fetchPizzas, fetchDrinks } from "./redux/action/items";
 import { setSortBy, setOrder } from "./redux/action/filters";
 
 const sortIems = [
@@ -49,7 +48,10 @@ function App() {
               path="/drinks"
               element={<Drinks sortBy={sortBy} order={order} />}
             />
-            <Route path="/desserts" element={<Desserts />} />
+            <Route
+              path="/desserts"
+              element={<Desserts sortBy={sortBy} order={order} />}
+            />
             <Route path="/constructor" element={<Constructor />} />
           </Routes>
         </div>
