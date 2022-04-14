@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { useState, useEffect, useRef } from "react";
 
 import { useLocation } from "react-router-dom";
@@ -35,28 +36,43 @@ function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
   useEffect(() => {
     document.body.addEventListener("click", closePopup);
   }, []);
-
+  let hideSort = false;
   const url = useLocation().pathname;
   const onUrlChange = () => {
     switch (url) {
       case "/":
+        hideSort = false;
         return "Меню піци: ";
 
       case "/drinks":
+        hideSort = false;
         return "Меню напоїв: ";
 
       case "/desserts":
+        hideSort = false;
         return "Меню десертів: ";
+
+      case "/constuctor":
+        hideSort = true;
+        return "Конструктор: ";
 
       default:
         return "Меню піци: ";
     }
   };
+
   const label = onUrlChange();
   return (
     <section className="sort">
       <h2>{label}</h2>
-      <div className="sort_label">
+      <div
+        className={classNames(
+          {
+            hide: hideSort,
+          },
+          "sort_label"
+        )}
+      >
         <img
           onClick={toggleActiveTriangle}
           className={order === "asc" ? "" : "rotate"}

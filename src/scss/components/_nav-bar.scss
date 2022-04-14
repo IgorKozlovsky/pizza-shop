@@ -109,11 +109,11 @@ $count: 1;
     height: 60%;
     width: 100%;
     align-items: center;
-    transition: filter 0.25s ease-out;
-    transition: transform 0.55s ease-out;
+    filter: brightness(1);
+    transition: transform 0.55s ease-out, filter 0.25s ease-out;
     @include clickAnim;
     &:hover {
-      filter: brightness(1.1);
+      filter: brightness(1.05);
     }
     figure {
       margin-left: 5px;
