@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 
 function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
-  // const [activeTriangle, setActiveTriangle] = useState(false);
   const sortRef = useRef();
 
   const activeLable = items.find((obj) => obj.type === sortBy.type).name;

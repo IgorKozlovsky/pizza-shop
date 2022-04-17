@@ -9,27 +9,21 @@ export const fetchPizzas =
   ({ type }, order) =>
   (dispatch) => {
     dispatch(setLoaded(false));
-    axios
-      .get(`http://localhost:3001/pizzas?_sort=${type}&_order=${order}`)
-      .then(({ data }) => dispatch(setPizza(data)));
+    axios.get(`http://localhost:3001/pizzas?_sort=${type}&_order=${order}`).then(({ data }) => dispatch(setPizza(data)));
   };
 
 export const fetchDrinks =
   ({ type }, order) =>
   (dispatch) => {
     dispatch(setLoaded(false));
-    axios
-      .get(`http://localhost:3001/drinks?_sort=${type}&_order=${order}`)
-      .then(({ data }) => dispatch(setDrinks(data)));
+    axios.get(`http://localhost:3001/drinks?_sort=${type}&_order=${order}`).then(({ data }) => dispatch(setDrinks(data)));
   };
 
 export const fetchDesserts =
   ({ type }, order) =>
   (dispatch) => {
     dispatch(setLoaded(false));
-    axios
-      .get(`http://localhost:3001/desserts?_sort=${type}&_order=${order}`)
-      .then(({ data }) => dispatch(setDesserts(data)));
+    axios.get(`http://localhost:3001/desserts?_sort=${type}&_order=${order}`).then(({ data }) => dispatch(setDesserts(data)));
   };
 
 export const setPizza = (type) => ({
@@ -44,4 +38,9 @@ export const setDrinks = (type) => ({
 export const setDesserts = (type) => ({
   type: "SET_DESSERTS",
   payload: type,
+});
+
+export const setNewPrice = (price, id) => ({
+  type: "SET_NEW_PRICE",
+  payload: { price, id },
 });

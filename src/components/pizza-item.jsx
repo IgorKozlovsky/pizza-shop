@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { PizzaLoading } from "./Loadings";
 
-function PizzaItem({ imageUrl, name, text, types, sizes, price }) {
+function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick }) {
   const varietyOfTypes = ["Звичайний", "Тонкий", "Без бортів"];
+  const varietyOfSizes = sizes;
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
 
@@ -14,6 +14,18 @@ function PizzaItem({ imageUrl, name, text, types, sizes, price }) {
     setActiveType(index);
   };
 
+  const onAddPizza = () => {
+    let obj = {
+      id,
+      imageUrl,
+      name,
+      text,
+      type: varietyOfTypes[activeType],
+      size: varietyOfSizes[activeSize],
+      price,
+    };
+    onAddClick(obj);
+  };
   return (
     <div className="pizza_item">
       <img src={require(`../assets/img/${imageUrl}`)} />
@@ -57,7 +69,7 @@ function PizzaItem({ imageUrl, name, text, types, sizes, price }) {
       </div>
       <div className="pizza_add_wrapper">
         <p>{price}₴</p>
-        <button>+ Додати</button>
+        <button onClick={onAddPizza}>+ Додати</button>
       </div>
     </div>
   );

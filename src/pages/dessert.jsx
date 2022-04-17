@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DessertsItem } from "../components";
-import { PizzaLoading } from "../components/Loadings";
+import { DessertsLoading } from "../components/Loadings";
 import { fetchDesserts } from "../redux/action/items";
 
 function Desserts({ sortBy, order }) {
@@ -12,16 +12,23 @@ function Desserts({ sortBy, order }) {
   useEffect(() => {
     dispatch(fetchDesserts(sortBy, order));
   }, [sortBy, order]);
-
+  const onAddClick = (obj) => {
+    dispatch({
+      type: "ADD_DESSERT",
+      payload: obj,
+    });
+  };
   return (
     <div className="pizza_wrapper">
       {isLoaded
         ? items.map((obj) => {
-            return <DessertsItem key={obj.id} {...obj} />;
+            return (
+              <DessertsItem key={obj.id} {...obj} onAddClick={onAddClick} />
+            );
           })
         : Array(12)
             .fill(0)
-            .map((_, index) => <PizzaLoading key={index} />)}
+            .map((_, index) => <DessertsLoading key={index} />)}
     </div>
   );
 }

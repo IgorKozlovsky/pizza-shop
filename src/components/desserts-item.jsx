@@ -1,4 +1,15 @@
-function DessertsItem({ imageUrl, name, type, price }) {
+import Button from "./button";
+
+function DessertsItem({ imageUrl, name, type, price, onAddClick }) {
+  const onAddDessert = () => {
+    let obj = {
+      imageUrl: imageUrl,
+      name: name,
+      text: type,
+      price: price,
+    };
+    onAddClick(obj);
+  };
   return (
     <div className="pizza_item">
       <img
@@ -10,7 +21,7 @@ function DessertsItem({ imageUrl, name, type, price }) {
       <h4>{type}</h4>
       <div className="pizza_add_wrapper">
         <p>{price}₴</p>
-        <button>+ Додати</button>
+        <button onClick={onAddDessert}>+ Додати</button>
       </div>
     </div>
   );

@@ -12,11 +12,19 @@ function Pizza({ sortBy, order }) {
   useEffect(() => {
     dispatch(fetchPizzas(sortBy, order));
   }, [sortBy, order]);
+
+  const onAddClick = (obj) => {
+    dispatch({
+      type: "ADD_PIZZA",
+      payload: obj,
+    });
+  };
+  const onChangePrice = (price, id) => {};
   return (
     <div className="pizza_wrapper">
       {isLoaded
         ? items.map((obj) => {
-            return <PizzaItem key={obj.id} {...obj} />;
+            return <PizzaItem key={obj.id} {...obj} onAddClick={onAddClick} />;
           })
         : Array(12)
             .fill(0)
