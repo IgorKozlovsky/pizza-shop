@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useCallback, useEffect } from "react";
 import { setSortBy, setOrder } from "./redux/action/filters";
+import { fetchItems } from "./redux/action/items";
 
 const sortIems = [
   { name: "ціною", type: "price" },
@@ -25,6 +26,10 @@ function App() {
     dispatch(setOrder(index));
   }, []);
 
+  useEffect(() => {
+    dispatch(fetchItems(sortBy, order));
+  }, [sortBy, order]);
+
   return (
     <div className="wrapper">
       <nav className="nav">
@@ -32,26 +37,13 @@ function App() {
       </nav>
       <main>
         <div className="main_top">
-          <Sort
-            items={sortIems}
-            sortBy={sortBy}
-            labelItems={topLabelItem}
-            onClickSetSort={onSetSortBy}
-            order={order}
-            onClickOrder={onSetOrder}
-          />
+          <Sort items={sortIems} sortBy={sortBy} labelItems={topLabelItem} onClickSetSort={onSetSortBy} order={order} onClickOrder={onSetOrder} />
         </div>
         <div className="main_wrapper">
           <Routes>
-            <Route path="/" element={<Pizza sortBy={sortBy} order={order} />} />
-            <Route
-              path="/drinks"
-              element={<Drinks sortBy={sortBy} order={order} />}
-            />
-            <Route
-              path="/desserts"
-              element={<Desserts sortBy={sortBy} order={order} />}
-            />
+            <Route path="/" element={<Pizza />} />
+            <Route path="/drinks" element={<Drinks />} />
+            <Route path="/desserts" element={<Desserts />} />
             <Route path="/constructor" element={<Constructor />} />
           </Routes>
         </div>

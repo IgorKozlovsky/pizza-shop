@@ -82,10 +82,12 @@
     background-color: $red;
     border-radius: 50px;
     font-weight: 500;
-    padding: 12px 20px 15px 20px;
+    padding: 12px 40px 15px 40px;
     color: white;
     margin: 15px 15px 15px 0px;
     transition: 0.2s ease-out;
+    span {
+    }
     &:active {
       transform: scale(0.8);
     }

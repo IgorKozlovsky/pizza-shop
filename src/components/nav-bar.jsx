@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function NavBar() {
+  const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+
   return (
     <header className="navbar_wrapper">
       <div className="navbar_bar">
@@ -21,12 +24,12 @@ function NavBar() {
         <Link to="/bucket">
           <button className="bucket">
             <figure>
-              <figcaption>0</figcaption>
+              <figcaption>{totalCount}</figcaption>
               <img src={require("../assets/img/basket.png")} />
             </figure>
             <article>
               <h2>Замовити</h2>
-              <p>00.00</p>
+              <p>{totalPrice}.00 ₴</p>
             </article>
           </button>
         </Link>

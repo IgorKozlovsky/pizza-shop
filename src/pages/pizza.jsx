@@ -1,30 +1,30 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PizzaItem } from "../components/index";
 import { PizzaLoading } from "../components/Loadings";
-import { fetchPizzas } from "../redux/action/items";
+import { onAddItem } from "../redux/action/cart";
 
-function Pizza({ sortBy, order }) {
+function Pizza() {
   const dispatch = useDispatch();
-  const items = useSelector(({ items }) => items.itemsPizza);
+  const items = useSelector(({ items }) => items.items[0]);
   const isLoaded = useSelector(({ items }) => items.isLoaded);
+  const cartItems = useSelector(({ cart }) => cart.items.pizza);
 
-  useEffect(() => {
-    dispatch(fetchPizzas(sortBy, order));
-  }, [sortBy, order]);
-
-  const onAddClick = (obj) => {
-    dispatch({
-      type: "ADD_PIZZA",
-      payload: obj,
-    });
+  const onAddClick = (obj, type) => {
+    dispatch(onAddItem(obj, type));
   };
-  const onChangePrice = (price, id) => {};
+
   return (
     <div className="pizza_wrapper">
       {isLoaded
         ? items.map((obj) => {
-            return <PizzaItem key={obj.id} {...obj} onAddClick={onAddClick} />;
+            return (
+              <PizzaItem
+                key={obj.id}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                {...obj}
+                onAddClick={onAddClick}
+              />
+            );
           })
         : Array(12)
             .fill(0)

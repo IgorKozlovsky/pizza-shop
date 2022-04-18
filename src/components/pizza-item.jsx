@@ -1,11 +1,13 @@
 import classNames from "classnames";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick }) {
+function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, addedCount }) {
   const varietyOfTypes = ["Звичайний", "Тонкий", "Без бортів"];
   const varietyOfSizes = sizes;
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
+
+  const [newPrice, setNewPrice] = useState(price);
 
   const onSizeChange = (index) => {
     setActiveSize(index);
@@ -13,6 +15,43 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick }
   const onTypeChange = (index) => {
     setActiveType(index);
   };
+  useEffect(() => {
+    let valueSize = 0;
+    switch (activeSize) {
+      case 0:
+        valueSize = 0;
+        break;
+      case 1:
+        valueSize = 20;
+        break;
+      case 2:
+        valueSize = 60;
+        break;
+
+      default:
+        valueSize = 0;
+        break;
+    }
+    let valueType = 0;
+    switch (activeType) {
+      case 0:
+        valueType = 0;
+        break;
+      case 1:
+        valueType = 15;
+        break;
+      case 2:
+        valueType = 25;
+        break;
+
+      default:
+        valueType = 0;
+        break;
+    }
+
+    let value = price + valueSize + valueType;
+    setNewPrice(value);
+  }, [activeSize, activeType]);
 
   const onAddPizza = () => {
     let obj = {
@@ -22,9 +61,9 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick }
       text,
       type: varietyOfTypes[activeType],
       size: varietyOfSizes[activeSize],
-      price,
+      price: newPrice,
     };
-    onAddClick(obj);
+    onAddClick(obj, "pizza");
   };
   return (
     <div className="pizza_item">
@@ -68,8 +107,10 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick }
         </ul>
       </div>
       <div className="pizza_add_wrapper">
-        <p>{price}₴</p>
-        <button onClick={onAddPizza}>+ Додати</button>
+        <p>{newPrice}₴</p>
+        <button onClick={onAddPizza}>
+          <span>{addedCount}</span> В кошик
+        </button>
       </div>
     </div>
   );

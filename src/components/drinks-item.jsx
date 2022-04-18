@@ -1,12 +1,13 @@
-function DrinksItem({ imageUrl, name, type, price, onAddClick }) {
+function DrinksItem({ imageUrl, name, type, price, id, onAddClick, addedCount }) {
   const onAddDrink = () => {
     let obj = {
-      imageUrl: imageUrl,
-      name: name,
-      text: type,
-      price: price,
+      id,
+      imageUrl,
+      name,
+      type,
+      price,
     };
-    onAddClick(obj);
+    onAddClick(obj, "drinks");
   };
   return (
     <div className="pizza_item">
@@ -15,7 +16,9 @@ function DrinksItem({ imageUrl, name, type, price, onAddClick }) {
       <h4>{type}</h4>
       <div className="pizza_add_wrapper">
         <p>{price}₴</p>
-        <button onClick={onAddDrink}>+ Додати</button>
+        <button onClick={onAddDrink}>
+          <span>{addedCount}</span> В кошик
+        </button>
       </div>
     </div>
   );

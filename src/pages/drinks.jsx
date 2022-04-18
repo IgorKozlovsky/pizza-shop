@@ -1,28 +1,28 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { DrinksItem } from "../components";
 import { DrinksLoading } from "../components/Loadings";
-import { fetchDrinks } from "../redux/action/items";
+import { onAddItem } from "../redux/action/cart";
 
-function Drinks({ sortBy, order }) {
+function Drinks() {
   const dispatch = useDispatch();
-  const items = useSelector(({ items }) => items.itemsDrinks);
+  const items = useSelector(({ items }) => items.items[1]);
   const isLoaded = useSelector(({ items }) => items.isLoaded);
-
-  useEffect(() => {
-    dispatch(fetchDrinks(sortBy, order));
-  }, [sortBy, order]);
-  const onAddClick = (obj) => {
-    dispatch({
-      type: "ADD_DRINK",
-      payload: obj,
-    });
+  const cartItems = useSelector(({ cart }) => cart.items.drinks);
+  const onAddClick = (obj, type) => {
+    dispatch(onAddItem(obj, type));
   };
   return (
     <div className="pizza_wrapper">
       {isLoaded
         ? items.map((obj) => {
-            return <DrinksItem key={obj.id} {...obj} onAddClick={onAddClick} />;
+            return (
+              <DrinksItem
+                key={obj.id}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                {...obj}
+                onAddClick={onAddClick}
+              />
+            );
           })
         : Array(12)
             .fill(0)

@@ -1,7 +1,7 @@
 import React from "react";
 
-function Button({ addItemToBucket }) {
-  return <button onClick={addItemToBucket}>+ Додати</button>;
+function Button({ onAddItem, addedCount }) {
+  return <button onClick={onAddItem}>{addedCount > 0 ? `+ -` : `В кошик`}</button>;
 }
 
 export default Button;
