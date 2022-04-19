@@ -82,14 +82,49 @@
     background-color: $red;
     border-radius: 50px;
     font-weight: 500;
-    padding: 12px 40px 15px 40px;
     color: white;
     margin: 15px 15px 15px 0px;
     transition: 0.2s ease-out;
-    span {
+    height: 65px;
+    width: 150px;
+    text-align: center;
+    .minbtn {
+      padding-top: 1%;
+      cursor: pointer;
+      font-size: 35px;
+      width: 60px;
+      height: 60px;
+      text-align: center;
+      border-radius: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.063);
+      background-color: #fdfdfd;
+      transition: 0.1s;
+      &:hover {
+        background-color: #ffffff;
+      }
     }
-    &:active {
-      transform: scale(0.8);
+    .count {
+      padding-top: 10%;
+      width: 50px;
+      height: 65px;
+
+      text-align: center;
     }
+    .nohover:active {
+      all: unset;
+    }
+  }
+  .active_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: $red;
+    border: 2px $red solid;
+    font-weight: 800;
+    cursor: default;
+    height: 65px;
+    width: auto;
   }
 }

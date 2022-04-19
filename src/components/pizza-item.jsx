@@ -65,6 +65,8 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, 
     };
     onAddClick(obj, "pizza");
   };
+
+  const onRemovePizza = () => {};
   return (
     <div className="pizza_item">
       <img src={require(`../assets/img/${imageUrl}`)} />
@@ -108,9 +110,19 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, 
       </div>
       <div className="pizza_add_wrapper">
         <p>{newPrice}₴</p>
-        <button onClick={onAddPizza}>
-          <span>{addedCount}</span> В кошик
-        </button>
+        {addedCount > 0 ? (
+          <button className="active_button nohover">
+            <div onClick={onAddPizza} className="minbtn">
+              +
+            </div>{" "}
+            <div className="count">{addedCount}</div>{" "}
+            <div onClick={onRemovePizza} className="minbtn">
+              -
+            </div>
+          </button>
+        ) : (
+          <button onClick={onAddPizza}>В кошик</button>
+        )}
       </div>
     </div>
   );
