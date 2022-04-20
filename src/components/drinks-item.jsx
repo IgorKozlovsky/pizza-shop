@@ -20,17 +20,12 @@ function DrinksItem({ imageUrl, name, type, price, id, onAddClick, addedCount })
       <h4>{type}</h4>
       <div className="pizza_add_wrapper">
         <p>{price}₴</p>
-        {addedCount > 0 ? (
-          <button
-            className={classNames({
-              active_button: addedCount > 0,
-              nohover: addedCount > 0,
-            })}
-          >
+        {addedCount && addedCount[`${type}`] && addedCount[`${type}`].length > 0 ? (
+          <button className="active_button nohover">
             <div onClick={onAddDrink} className="minbtn">
               +
             </div>{" "}
-            <div className="count">{addedCount}</div>{" "}
+            <div className="count">{addedCount[`${type}`].length}</div>{" "}
             <div onClick={onRemoveDrink} className="minbtn">
               -
             </div>

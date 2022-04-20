@@ -55,6 +55,10 @@ function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
         hideSort = true;
         return "Конструктор: ";
 
+      case "/cart":
+        hideSort = true;
+        return "Корзина: ";
+
       default:
         return "Меню піци: ";
     }
@@ -72,17 +76,10 @@ function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
           "sort_label"
         )}
       >
-        <img
-          onClick={toggleActiveTriangle}
-          className={order === "asc" ? "" : "rotate"}
-        ></img>
+        <img onClick={toggleActiveTriangle} className={order === "asc" ? "" : "rotate"}></img>
         <article>
           <label>Сортування за: </label>
-          <span
-            onClick={toggleVisiblePopup}
-            ref={sortRef}
-            className="sort_name"
-          >
+          <span onClick={toggleVisiblePopup} ref={sortRef} className="sort_name">
             {activeLable}
           </span>
           {visiblePopup && (

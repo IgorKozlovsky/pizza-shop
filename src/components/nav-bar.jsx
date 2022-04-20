@@ -21,7 +21,7 @@ function NavBar() {
           <Link to="/desserts">Десерти</Link>
           <Link to="/constuctor">Конструктор</Link>
         </nav>
-        <Link to="/bucket">
+        <Link to="/cart">
           <button className="bucket">
             <figure>
               <figcaption>{totalCount}</figcaption>

@@ -15,6 +15,7 @@
   border-radius: 20px;
   box-shadow: 0px 0px 16px #75768426;
   margin: 30px 29px;
+  transition: 0.5s;
   img {
     padding-top: 15px;
   }
@@ -22,6 +23,9 @@
     text-align: center;
     color: $grey;
     padding: 15px;
+  }
+  &:hover {
+    box-shadow: 0px 0px 16px #7576847f;
   }
 }
 .pizza_selector_wrapper {

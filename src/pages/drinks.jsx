@@ -15,14 +15,7 @@ function Drinks() {
     <div className="pizza_wrapper">
       {isLoaded
         ? items.map((obj) => {
-            return (
-              <DrinksItem
-                key={obj.id}
-                addedCount={cartItems[obj.id] && cartItems[obj.id].length}
-                {...obj}
-                onAddClick={onAddClick}
-              />
-            );
+            return <DrinksItem key={obj.id} addedCount={cartItems[obj.id]} {...obj} onAddClick={onAddClick} />;
           })
         : Array(12)
             .fill(0)

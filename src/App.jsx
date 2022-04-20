@@ -1,6 +1,6 @@
 import "./scss/App.scss";
 import { NavBar, Footer, Sort } from "./components";
-import { Pizza, Drinks, Desserts, Constructor } from "./pages";
+import { Pizza, Drinks, Desserts, Constructor, Cart } from "./pages";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useCallback, useEffect } from "react";
@@ -37,7 +37,14 @@ function App() {
       </nav>
       <main>
         <div className="main_top">
-          <Sort items={sortIems} sortBy={sortBy} labelItems={topLabelItem} onClickSetSort={onSetSortBy} order={order} onClickOrder={onSetOrder} />
+          <Sort
+            items={sortIems}
+            sortBy={sortBy}
+            labelItems={topLabelItem}
+            onClickSetSort={onSetSortBy}
+            order={order}
+            onClickOrder={onSetOrder}
+          />
         </div>
         <div className="main_wrapper">
           <Routes>
@@ -45,6 +52,7 @@ function App() {
             <Route path="/drinks" element={<Drinks />} />
             <Route path="/desserts" element={<Desserts />} />
             <Route path="/constructor" element={<Constructor />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>
       </main>
