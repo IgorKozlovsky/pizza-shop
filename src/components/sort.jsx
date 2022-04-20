@@ -57,7 +57,7 @@ function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
 
       case "/cart":
         hideSort = true;
-        return "Корзина: ";
+        return "Кошик: ";
 
       default:
         return "Меню піци: ";
