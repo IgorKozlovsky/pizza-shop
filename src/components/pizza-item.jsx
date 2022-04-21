@@ -111,14 +111,14 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, 
       <div className="pizza_add_wrapper">
         <p>{newPrice}₴</p>
         {addedCount &&
-        addedCount[`${varietyOfTypes[activeType]}${varietyOfSizes[activeSize]}`] &&
-        addedCount[`${varietyOfTypes[activeType]}${varietyOfSizes[activeSize]}`].length > 0 ? (
+        addedCount[`${varietyOfTypes[activeType]} ${varietyOfSizes[activeSize]}`] &&
+        addedCount[`${varietyOfTypes[activeType]} ${varietyOfSizes[activeSize]}`].length > 0 ? (
           <button className="active_button nohover">
             <div onClick={onAddPizza} className="minbtn">
               +
             </div>{" "}
             <div className="count">
-              {addedCount[`${varietyOfTypes[activeType]}${varietyOfSizes[activeSize]}`].length}
+              {addedCount[`${varietyOfTypes[activeType]} ${varietyOfSizes[activeSize]}`].length}
             </div>{" "}
             <div onClick={onRemovePizza} className="minbtn">
               -

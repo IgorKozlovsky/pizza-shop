@@ -51,7 +51,6 @@ function App() {
             <Route path="/" element={<Pizza />} />
             <Route path="/drinks" element={<Drinks />} />
             <Route path="/desserts" element={<Desserts />} />
-            <Route path="/constructor" element={<Constructor />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
         </div>

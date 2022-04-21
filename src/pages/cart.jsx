@@ -4,6 +4,7 @@ import CartItem from "../components/cart-item";
 
 function Cart() {
   const { totalPrice } = useSelector(({ cart }) => cart);
+  const { pizza, drinks, desserts } = useSelector(({ cart }) => cart.items);
   const isLoaded = useSelector(({ items }) => items.isLoaded);
   return (
     <div className="cart_wrapper">
@@ -36,23 +37,9 @@ function Cart() {
       </main>
       <section className="cart_side_wrapper">
         <article className="cart_side">
-          {/* {isLoaded
-          ? items.map((obj) => {
-              return <PizzaItem key={obj.id} addedCount={cartItems[obj.id]} {...obj} onAddClick={onAddClick} />;
-            })
-          : Array(12)
-              .fill(0)
-              .map((_, index) => <PizzaLoading key={index} />)} */}
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          <CartItem key={"pizza"} index={"pizza"} obj={pizza} />
+          <CartItem key={"drinks"} obj={drinks} />
+          <CartItem key={"desserts"} obj={desserts} />
         </article>
         <article className="cart_side_sum">
           <p>{totalPrice}.00 ₴</p>

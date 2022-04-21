@@ -19,7 +19,6 @@ function NavBar() {
           </Link>
           <Link to="/drinks">Напої</Link>
           <Link to="/desserts">Десерти</Link>
-          <Link to="/constuctor">Конструктор</Link>
         </nav>
         <Link to="/cart">
           <button className="bucket">

@@ -61,11 +61,13 @@ $count: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     height: 50px;
     width: 100%;
     font-weight: 600;
+
     a {
-      margin-left: 10%;
+      margin: 0 -30px;
       display: inline-block;
       position: relative;
       color: #f4f4f4;
@@ -94,6 +96,9 @@ $count: 1;
     }
     a:first-child {
       margin-left: 0;
+    }
+    a:last-child {
+      margin-right: 40px;
     }
   }
   .link-lox {

@@ -5,3 +5,4 @@ export { default as DrinksItem } from "./drinks-item";
 export { default as DessertsItem } from "./desserts-item";
 export { default as Sort } from "./sort";
 export { default as Button } from "./button";
+export { default as Cacaca } from "./cacaca";

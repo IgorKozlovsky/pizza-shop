@@ -125,8 +125,10 @@ input::-webkit-inner-spin-button {
   justify-content: space-between;
 
   img {
+    object-fit: contain;
+    object-position: center;
     width: 150px;
-    height: auto;
+    height: 150px;
   }
   .type_item_cart {
     text-align: center;
@@ -182,6 +184,7 @@ input::-webkit-inner-spin-button {
   }
 }
 .cart_item_wrapper {
+  width: 300px;
   div {
     display: flex;
     flex-direction: column;
@@ -192,6 +195,8 @@ input::-webkit-inner-spin-button {
   }
 }
 .price_item_cart {
+  width: 1 00px;
+  text-align: left;
   font: {
     size: 26px;
     weight: bold;

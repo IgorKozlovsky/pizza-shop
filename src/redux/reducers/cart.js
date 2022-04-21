@@ -24,7 +24,7 @@ const cart = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       const { obj, type } = action.payload;
-      const nameNewItem = type === "pizza" ? `${obj.type}${obj.size}` : `${obj.type}`;
+      const nameNewItem = type === "pizza" ? `${obj.type} ${obj.size}` : `${obj.type}`;
 
       const currentItems = {
         ...state.items,
