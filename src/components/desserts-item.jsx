@@ -11,7 +11,11 @@ function DessertsItem({ imageUrl, name, type, price, id, onAddClick, addedCount,
     onAddClick(obj, "desserts");
   };
   const onRemoveDessert = () => {
-    onRemoveClick();
+    let obj = {
+      id,
+      type,
+    };
+    onRemoveClick(obj);
   };
 
   return (

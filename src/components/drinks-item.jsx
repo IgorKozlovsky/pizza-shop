@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-function DrinksItem({ imageUrl, name, type, price, id, onAddClick, addedCount }) {
+function DrinksItem({ imageUrl, name, type, price, id, onAddClick, addedCount, onRemoveClick }) {
   const onAddDrink = () => {
     let obj = {
       id,
@@ -11,7 +11,13 @@ function DrinksItem({ imageUrl, name, type, price, id, onAddClick, addedCount })
     };
     onAddClick(obj, "drinks");
   };
-  const onRemoveDrink = () => {};
+  const onRemoveDrink = () => {
+    let obj = {
+      id,
+      type,
+    };
+    onRemoveClick(obj);
+  };
 
   return (
     <div className="pizza_item">

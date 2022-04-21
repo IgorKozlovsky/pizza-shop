@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 
-function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, addedCount }) {
+function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, addedCount, onRemoveClick }) {
   const varietyOfTypes = ["Звичайний", "Тонкий", "Без бортів"];
   const varietyOfSizes = sizes;
   const [activeType, setActiveType] = useState(types[0]);
@@ -66,7 +66,14 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, 
     onAddClick(obj, "pizza");
   };
 
-  const onRemovePizza = () => {};
+  const onRemovePizza = () => {
+    let obj = {
+      id,
+      type: varietyOfTypes[activeType],
+      size: varietyOfSizes[activeSize],
+    };
+    onRemoveClick(obj);
+  };
   return (
     <div className="pizza_item">
       <img src={require(`../assets/img/${imageUrl}`)} />

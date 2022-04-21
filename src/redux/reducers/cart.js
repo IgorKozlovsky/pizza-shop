@@ -21,6 +21,7 @@ function connectionMassives(obj) {
 }
 
 const cart = (state = initialState, action) => {
+  let totalCount, totalPrice;
   switch (action.type) {
     case "ADD_ITEM":
       const { obj, type } = action.payload;
@@ -40,11 +41,34 @@ const cart = (state = initialState, action) => {
         },
       };
       const allItems = connectionMassives(currentItems);
-      const totalCount = allItems.length;
-      const totalPrice = allItems.reduce((previousValue, currentItem) => previousValue + currentItem.price, 0);
+      totalCount = allItems.length;
+      totalPrice = allItems.reduce((previousValue, currentItem) => previousValue + currentItem.price, 0);
 
       return { ...state, items: currentItems, totalPrice, totalCount };
-
+    case "REMOVE_ITEM":
+      const nameNewItemRe =
+        action.payload.type === "pizza"
+          ? `${action.payload.obj.type} ${action.payload.obj.size}`
+          : `${action.payload.obj.type}`;
+      const currentItemsRe = {
+        ...state.items,
+        [action.payload.type]: {
+          ...state.items[action.payload.type],
+          [action.payload.obj.id]: {
+            ...state.items[action.payload.type][action.payload.obj.id],
+            [nameNewItemRe]: [...state.items[action.payload.type][action.payload.obj.id][nameNewItemRe].slice(1)],
+          },
+        },
+      };
+      const allItemsRe = connectionMassives(currentItemsRe);
+      totalCount = allItemsRe.length;
+      totalPrice = allItemsRe.reduce((previousValue, currentItem) => previousValue + currentItem.price, 0);
+      return {
+        ...state,
+        items: currentItemsRe,
+        totalPrice,
+        totalCount,
+      };
     default:
       return state;
   }

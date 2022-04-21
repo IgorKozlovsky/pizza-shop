@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { DessertsItem } from "../components";
 import { DessertsLoading } from "../components/Loadings";
-import { onAddItem } from "../redux/action/cart";
+import { onAddItem, onRemoveItem } from "../redux/action/cart";
 
 function Desserts() {
   const dispatch = useDispatch();
@@ -11,11 +11,22 @@ function Desserts() {
   const onAddClick = (obj, type) => {
     dispatch(onAddItem(obj, type));
   };
+  const onRemoveClick = (obj) => {
+    dispatch(onRemoveItem(obj, "desserts"));
+  };
   return (
     <div className="pizza_wrapper">
       {isLoaded
         ? items.map((obj) => {
-            return <DessertsItem key={obj.id} addedCount={cartItems[obj.id]} {...obj} onAddClick={onAddClick} />;
+            return (
+              <DessertsItem
+                key={obj.id}
+                addedCount={cartItems[obj.id]}
+                {...obj}
+                onAddClick={onAddClick}
+                onRemoveClick={onRemoveClick}
+              />
+            );
           })
         : Array(12)
             .fill(0)
