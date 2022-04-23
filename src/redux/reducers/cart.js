@@ -6,6 +6,7 @@ const initialState = {
   },
   totalPrice: 0,
   totalCount: 0,
+  display: false,
 };
 
 function connectionMassives(obj) {
@@ -68,6 +69,22 @@ const cart = (state = initialState, action) => {
         items: currentItemsRe,
         totalPrice,
         totalCount,
+      };
+    case "SHOW_ALERT":
+      return {
+        ...state,
+        display: !state.display,
+      };
+    case "HIDE_ALERT":
+      return {
+        items: {
+          pizza: {},
+          drinks: {},
+          desserts: {},
+        },
+        totalPrice: 0,
+        totalCount: 0,
+        display: !state.display,
       };
     default:
       return state;

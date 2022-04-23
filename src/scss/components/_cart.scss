@@ -37,7 +37,7 @@
       box-shadow: 0px 0px 3px #000000da;
     }
   }
-  p {
+  div p {
     font: {
       size: 2em;
     }
@@ -80,7 +80,7 @@
     padding: 10px;
     border-radius: 8px;
   }
-  article {
+  li {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
@@ -252,4 +252,14 @@ input::-webkit-inner-spin-button {
   &:active {
     transform: scale(0.8);
   }
+}
+.error {
+  margin: 0px 0px 0px 18px;
+  font-size: 15px;
+  color: #bf1650;
+}
+
+.error::before {
+  display: inline;
+  content: "⚠ ";
 }
