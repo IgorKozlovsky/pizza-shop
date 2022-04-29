@@ -19,6 +19,7 @@ function App() {
   const dispatch = useDispatch();
 
   const { sortBy, order } = useSelector(({ filters }) => filters);
+
   const { display } = useSelector(({ cart }) => cart);
   const onSetSortBy = useCallback((index) => {
     dispatch(setSortBy(index));

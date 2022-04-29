@@ -1,5 +1,6 @@
 import { onAddItem, onRemoveItem } from "../redux/action/cart";
 import CartItem from "./cart-item";
+import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 
 function CartItemsWrapper({ index, obj }) {
@@ -25,5 +26,10 @@ function CartItemsWrapper({ index, obj }) {
     });
   });
 }
+
+CartItemsWrapper.propTypes = {
+  obj: PropTypes.object,
+  index: PropTypes.string,
+};
 
 export default CartItemsWrapper;

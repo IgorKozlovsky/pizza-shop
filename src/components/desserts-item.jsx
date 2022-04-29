@@ -1,4 +1,5 @@
-import classNames from "classnames";
+import PropTypes from "prop-types";
+
 function DessertsItem({ imageUrl, name, type, price, id, onAddClick, addedCount, onRemoveClick }) {
   const onAddDessert = () => {
     let obj = {
@@ -42,5 +43,22 @@ function DessertsItem({ imageUrl, name, type, price, id, onAddClick, addedCount,
     </div>
   );
 }
+
+DessertsItem.propTypes = {
+  id: PropTypes.number,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  type: PropTypes.string,
+  onAddClick: PropTypes.func,
+  addedCount: PropTypes.object,
+  onRemoveClick: PropTypes.func,
+};
+
+DessertsItem.defaultProps = {
+  name: "---",
+  price: 0,
+  types: " ",
+};
 
 export default DessertsItem;

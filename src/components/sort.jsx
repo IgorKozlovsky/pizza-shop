@@ -1,4 +1,6 @@
 import classNames from "classnames";
+import PropTypes from "prop-types";
+
 import React, { useState, useEffect, useRef } from "react";
 
 import { useLocation } from "react-router-dom";
@@ -103,5 +105,18 @@ function Sort({ items, sortBy, onClickSetSort, order, onClickOrder }) {
     </section>
   );
 }
+//  Sort({ items, sortBy, onClickSetSort, order, onClickOrder })
+Sort.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.object),
+  sortBy: PropTypes.object,
+  onClickSetSort: PropTypes.func,
+  order: PropTypes.string,
+  onClickOrder: PropTypes.func,
+};
+
+Sort.defaultProps = {
+  sortBy: 0,
+  order: "asc",
+};
 
 export default Sort;

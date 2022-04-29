@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function CartItem({ obj, index, lengthOfarr, onAddClick, onRemoveClick }) {
   const { id, imageUrl, name, text, type, size, price } = obj;
@@ -53,5 +54,13 @@ function CartItem({ obj, index, lengthOfarr, onAddClick, onRemoveClick }) {
     </div>
   );
 }
+
+CartItem.propTypes = {
+  obj: PropTypes.object,
+  index: PropTypes.string,
+  lengthOfarr: PropTypes.number,
+  onAddClick: PropTypes.func,
+  onRemoveClick: PropTypes.func,
+};
 
 export default CartItem;

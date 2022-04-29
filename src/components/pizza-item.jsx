@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
 function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, addedCount, onRemoveClick }) {
@@ -138,5 +139,25 @@ function PizzaItem({ id, imageUrl, name, text, types, sizes, price, onAddClick, 
     </div>
   );
 }
+
+PizzaItem.propTypes = {
+  id: PropTypes.number,
+  imageUrl: PropTypes.string,
+  name: PropTypes.string,
+  text: PropTypes.string,
+  price: PropTypes.number,
+  types: PropTypes.arrayOf(PropTypes.number),
+  sizes: PropTypes.arrayOf(PropTypes.number),
+  onAddClick: PropTypes.func,
+  addedCount: PropTypes.object,
+  onRemoveClick: PropTypes.func,
+};
+
+PizzaItem.defaultProps = {
+  name: "---",
+  price: 0,
+  types: [],
+  sizes: [],
+};
 
 export default PizzaItem;
